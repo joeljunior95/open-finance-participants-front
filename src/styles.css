@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+}
+
+/* navbar */
+app-navbar {
+    width: 100%;
+    height: 68px;
+    background-color: #1976d2;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+app-navbar h1 {
+    color: white;
+    margin: 0;
+  }
+
+/*content*/
+.container {
+    padding: 16px;
+    /* text-align: center; */
+}
+
+.container h4 {
+    margin-top: 50px;
+}
+
+.auth-server {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.auth-servers,.auth-item {
+    margin-right: 15px;
+}

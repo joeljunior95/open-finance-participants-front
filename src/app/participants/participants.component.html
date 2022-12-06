@@ -1,0 +1,19 @@
+<!-- <h2>Participantes do OpenFinance</h2> -->
+
+<div *ngFor="let participant of participants">
+    <h4>{{ participant.OrganisationName }} ({{ participant.LegalEntityName }})</h4>    
+    <strong>Authorisation Servers</strong>
+    <div *ngFor="let auth of participant.AuthorisationServers " class="auth-server">
+        <div class="auth-item">
+            <span>
+                <img *ngIf="auth.CustomerFriendlyLogoUri" src="{{auth.CustomerFriendlyLogoUri}}" alt="" width="50px"> 
+            </span>
+        </div>
+            
+        <div class="auth-item">
+            <span>{{auth.CustomerFriendlyName}}</span><br>
+            <span>URL de configuração: <a href="{{auth.OpenIDDiscoveryDocument}}">{{auth.OpenIDDiscoveryDocument}}</a></span>
+        </div>
+    </div>
+    
+</div>
