@@ -10,7 +10,7 @@ import { Participant } from '../models/participant';
 })
 export class ParticipantsService {
 
-  apiHost = 'http://127.0.0.1:5000/';
+  apiHost = 'http://127.0.0.1:5000/participants/';
   
   constructor(private httpClient: HttpClient) { }
 
@@ -19,13 +19,12 @@ export class ParticipantsService {
   }
 
   getParticipants(): Observable<Participant[]> {
-    return this.httpClient.get<Participant[]>(this.apiHost + 'all')
+    return this.httpClient.get<Participant[]>(this.apiHost + 'list')
       .pipe(
         retry(2),
         catchError(this.handleError))
   }
 
-  // Obtem um carro pelo id
   getParticipantById(id: number): Observable<Participant> {
     return this.httpClient.get<Participant>(this.apiHost + '/' + id)
       .pipe(
